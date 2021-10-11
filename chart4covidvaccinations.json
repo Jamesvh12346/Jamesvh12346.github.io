@@ -29,13 +29,13 @@
     "height": 300,
     "width": 310,
      
-    "mark": {"type": "line", "point": false},
+    "mark": {"type": "bar", "point": false},
    
     "encoding": {
   
       "x": {
         "field": "areaName",
-        "type": "temporal",
+        "type": "nominal",
         "title": null,
         "axis": {"grid": false}
       },
