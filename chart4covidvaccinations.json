@@ -34,7 +34,7 @@
     "encoding": {
   
       "x": {
-        "field": "date",
+        "field": "areaName",
         "type": "temporal",
         "title": null,
         "axis": {"grid": false}
