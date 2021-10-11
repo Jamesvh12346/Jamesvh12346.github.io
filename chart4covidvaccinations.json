@@ -41,7 +41,7 @@
       },
   
       "y": {
-        "field": "CumulativeVaccinations",
+        "field": "cumPeopleVaccinatedCompleteByPublishDate",
         "type": "quantitative",
         "title": null,
         "axis": {"grid": false}
