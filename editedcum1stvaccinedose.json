@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Covid Hospital Beds (added false observation)",
+    "text": "Cumulative 1st Vaccine Dose (added false observation)",
     "anchor": "start",
     "color": "black"
   },
   "height": 300,
   "width": 280,
   "data": {
-    "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/hospitalbeds.csv",
+    "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/Cumulative1stVaccineDose.csv",
     "format": {"type": "csv"}
   },
   "mark": {
@@ -18,6 +18,6 @@
   },
   "encoding": {
     "x": {"field": "date", "type": "temporal", "axis": {"labelAngle": 0, "grid": true}, "title": "Date"},
-    "y": {"field": "covidOccupiedMVBeds", "type": "quantitative", "axis": {"grid": true}, "title": "CovidHospitalBeds"}
+    "y": {"field": "cumPeopleVaccinatedFirstDoseByPublishDate", "type": "quantitative", "axis": {"grid": true}, "title": "Cum1stVaccineDose"}
   }
 }
