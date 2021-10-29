@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A bar chart with embedded data.",
+  "title": {
+    "text": "Cumulative 1st Vaccine Dose: in-line JSON",
+    "anchor": "start",
+    "color": "black"
+  },
+  "height": 300,
+  "width": 280,
+  "data": {
+    "values": [
+      {"date": "2021-01-10", "vaccinedoses": 2286572}, {"date": "2021-03-10", "vaccinedoses": 23053716},
+      {"date": "2021-05-10", "vaccinedoses": 35587348}, {"date": "2021-07-10", "vaccinedoses": 45881721}, {"date": "2021-09-10", "vaccinedoses": 48396404}, {"date": "2021-10-26", "tests": 49794120}
+    ]
+  },
+  "mark": {
+    "type": "line",
+    "interpolate": "monotone",
+    "color": "darkred"
+  },
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "axis": {"labelAngle": 0}, "title": "Date"},
+    "y": {"field": "vaccinedoses", "type": "quantitative", "title": "VaccineDoses"}
+  }
+}
