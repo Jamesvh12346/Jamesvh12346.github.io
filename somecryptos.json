@@ -1,0 +1,81 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "description": "NOMICS cryptocurrency chart. CORS does not work. Works using the AllOrigins tool, but this then retieved all/more data than expected. As a consequence dta needs to be filtered before charting.",
+
+    "config": {
+      "background":"#ffffff",
+      "view": {
+        "stroke": "transparent"
+      }
+    },
+   
+
+    "title": {
+    "text": "Some cryptos by market cap",
+    "anchor": "start",
+    "color": "#000000",
+    "subtitle":"Some currencies by market cap, $ billion. Source: nomics.api",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "subtitleColor":"#1793db"
+    
+  },
+
+    "data": {
+      "url": "https://api.allorigins.win/raw?url=https://api.nomics.com/v1/currencies/ticker?key=5029ecdc2cd62a344ef5b92a18816e95f92a6e52&interval=1d,30d,ytd"},
+  
+
+ "transform":[
+      {"filter": {
+        "field": "currency", 
+        "oneOf": ["SHIB", "XRP", "DOGE", "ADA", "BTC", "LINK"]}
+        }
+        ,
+    {"calculate": "datum.market_cap/1000000000", "as": "mktCapb"}
+  ],    
+
+    "mark": {
+      "type": "bar",
+      "color":"#b6042b"},
+  
+    "width":"container",
+    "height":300,
+    
+    "encoding": {
+      
+      "x": {
+        "field": "mktCapb", 
+        "type": "quantitative", 
+        "title": null,
+        "sort":"ascending",
+        "axis":{
+          "domainColor":"dimgrey",
+          "labelColor":"#b38615",
+          "tickColor":"black",
+          "gridColor":"dimgrey"
+          }
+        },
+      
+      "y": {
+        "field": "currency", 
+        "type": "ordinal",
+        "sort":"x", 
+        "title": null,
+          "axis":{
+            "domainColor":"dimgrey",
+            "labelColor":"#03613d",
+            "tickColor":"black",
+            "gridColor":"dimgrey"
+          }
+  
+    },
+
+    "tooltip": [
+      {"field": "name", "title": "Currency"},
+      {"field": "mktCapb", "title": "Market cap ($ billion)"}
+      
+      
+      ]
+  }
+}
