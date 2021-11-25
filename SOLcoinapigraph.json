@@ -4,7 +4,7 @@
   "description": "",
 
    "title": {
-    "text": "BTC 10 day average price",
+    "text": "SOL 10 day average price",
     "subtitle":"From April-20. Source: coinapi.io",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
@@ -19,7 +19,7 @@
  
   
   "data": {
-    "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/BTCcoinapi.json",
+    "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/SOLcoinapi.json",
     "format": {"type": "json"}},
   
 
