@@ -4,7 +4,7 @@
   "description": "",
 
    "title": {
-    "text": "Bitcoin Price",
+    "text": "Cardano Price",
     "subtitle":"Source: coinapi.io",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
