@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 
-<!-- Richard Davies, Data Science 2021 -->
+<!-- James Vaughan-Hughes, Data Science 2021 -->
 
 
 <!-- ///////////////////  HEAD //////////////////////////////////// -->
 
 <head>
 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>James Vaughan-Hughes: Data Science Portfolio</title>
+
+  <link rel="stylesheet" href="index.css">   
+  
 <!--The next three lines allow the Vega embed-->
 <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
@@ -21,120 +28,213 @@
 <!-- ///////////////////  START BODY //////////////////////////////////// -->
 
 <body>
+<div class="a">
+  <h1>ECON30006: Data Visualisation Portfolio</h1>
+  <p><strong>James Vaughan-Hughes | Student Number: 1933106</strong></p>
+
+  <div class="container">
+    <button class="button-56" role="button">Home</button>
+    <button class="button-56" onclick="location.href='https://Jamesvh12346.github.io/project'">Project</button>
+    <button class="button-56" onclick="location.href='https://github.com/Jamesvh12346/Jamesvh12346.github.io'">Github</button>
+  </div>
   
- <p>This is my portfolio of homework assignments</p>  
+</div>  
+  
 
 <!--Chart 1 -->
+  <div class="b">
+  <h3>Covid Cases</h3></div>
+  <div class="d">
+  <p>This is my first chart which shows the Covid-19 cases in different regions in the UK.</p>
+  <div class="a">  
   <div class="chart" id="chart1">
       <script>
         var myChart1 = "chart1_covidUKRegions.json";
         vegaEmbed('#chart1', myChart1);
       </script>
-  </div>
+    </div></div></div>
 
 <!--Chart 2 -->
+<div class="b">
+<h3>UK Productivity</h3></div> 
+<div class="d">
+<p>The second chart shows UK productivity over the years.</p></div>  
+<div class="a">  
 <div class="chart" id="chart2">
     <script>
       var myChart2 = "chart2_ukProductivity.json";
       vegaEmbed('#chart2', myChart2);
     </script>
-</div>
+  </div></div>
 
 <!--Chart 3 -->
+<div class="b">
+<h3>UK CO2 emissions.</p></div> 
+<div class="d">
+<p>The third chart shows UK CO2 emissions by sector.</p></div>  
+<div class="a">  
 <div class="chart" id="chart3">
     <script>
       var myChart3 = "chartENV10.json";
       vegaEmbed('#chart3', myChart3);
     </script>
-</div>  
+  </div></div>  
 
 <!--Chart 4 -->
+<div class="b">
+<h3>UK New Covid Cases</h3></div>
+<div class="d">
+<p>The fourth chart uses an API from the ONS website showing the Covid cases in the Cotswolds, Hounslow and Westminister.</p></div>
+<div class="a">  
 <div class="chart" id="chart4">
     <script>
       var myChart4 = "chart3covidnewcases.json";
       vegaEmbed('#chart4', myChart4);
     </script>
-</div>  
+  </div></div>  
 
 <!--Chart 5 -->
+<div class="b"
+<h3>Cumulative Vaccinations</h3></div> 
+<div class="div">
+<p>The fifth chart uses raw data showing cumulative vaccinations in the areas of the Cotswolds, Hounslow and Westminister.</p></div>
+<div class="a">
 <div class="chart" id="chart5">
     <script>
       var myChart5 = "chart4covidvaccinations.json";
       vegaEmbed('#chart5', myChart5);
     </script>
-</div>  
+  </div></div>  
 
 <!--Chart 6 -->
+<div class="b">
+<h3>Cumulative 1st Vaccine dose in the UK</h3></div>
+<div class="d">
+<p>For chart six I downloaded 1st vaccine dose data, adding in the false value of 55 million.</p></div>
+<div class="a">
 <div class="chart" id="chart6">
   <script>
     var myChart6 = "editedcum1stvaccinedose.json";
     vegaEmbed('#chart6', myChart6);
   </script>
-  </div> 
+  </div></div> 
  
 <!--Chart 7 -->
+<div class="b">
+<h3>Cumulative 1st Vaccine dose in the UK (inline)</h3></div>
+<div class="d">
+<p>My seventh chart is the in-line JSON for cumulative 1st vaccine doses in the UK.</p></div>
+<div class="a">
 <div class="chart" id="chart7">
   <script>
  var myChart7 = "inlinejson.json";
  vegaEmbed('#chart7', myChart7);
   </script>
-</div>
+  </div></div>
   
 <!--Chart 8 -->
+<div class="b">
+<h3>Bitcoin market cap</h3></div>
+<div class="d">
+<p>This graph was created from an API.</p></div>
+<div class="a">
 <div class="chart" id="chart8">
   <script>
   var myChart8 = "bitcoinapi.json";
   vegaEmbed('#chart8', myChart8);
    </script>
-</div>  
+  </div></div>  
 
 <!--Chart 9 -->
+<div class="b">
+<h3>Some crypto coins market caps</h3></div>  
+<div class="d">
+<p>This chart was created from a different api.</p></div>
+<div class="a">
 <div class="chart" id="chart9">
   <script>
   var myChart9 = "somecryptos.json";
   vegaEmbed('#chart9', myChart9);
   </script>
-  </div>
+  </div></div>
+
+<div class="d"><p><strong>The next four charts have been created using an api from FRED. This is done using a loop in Google Collab.
+</strong></p></div>  
  
  <!--Chart 10 -->
+<div class="b">
+<h3>BTC price</h3></div>
+<div class="a">
  <div class="chart" id="chart10">
    <script>
    var myChart10 = "BTCcoinapigraph.json";
    vegaEmbed('#chart10', myChart10);
    </script>
-  </div>
+  </div></div>
   
   <!--Chart 11 -->
+  <div class="b">
+    <h3>ETH price</h3></div>
+ <div class="a"> 
   <div class="chart" id="chart11">
     <script>
     var myChart11 = "ETHcoinapigraph.json";
     vegaEmbed('#chart11', myChart11);
     </script>
-  </div>
+  </div></div>
   
   <!--Chart 12 -->
+<div class="b">
+  <h3>SOL price</h3></div>
+<div class="a">
   <div class="chart" id="chart12">
     <script>
     var myChart12 = "SOLcoinapigraph.json";
     vegaEmbed('#chart12', myChart12);
     </script>
-  </div>
+  </div></div>
   
   <!--Chart 13 -->
+<div class="b">
+  <h3>XRP price</h3>
+  <div class="a">
   <div class="chart" id="chart13">
     <script>
     var myChart13 = "XRPcoinapigraph.json";
     vegaEmbed('#chart13', myChart13);
     </script>
-  </div>
+    </div></div>
   
   <!--Chart 14 -->
+  <div class="b">
+    <h3>City populations</h3></div>
+  <div class="d">
+    <p>This chart was created by scraping data using Google collab, showing the populations of the ten biggest cities in the world.
+    </p>
+  </div>
+  <div class="a">
   <div class="chart" id="chart14">
     <script>
     var myChart14 = "citypopulationsscraped.json";
     vegaEmbed('#chart14', myChart14);
     </script>
+    </div></div>
+  
+  <!--Chart 15 -->
+<div class="b">
+  <h3>Covid-19 Hospitalisations</h3></div>
+  <div class="d">
+   <p>Talking economics homework: One of the arguments made on Wednesday was that Covid was the biggest event to hit healthcare ever, putting huge
+     stress on the healthcare system, leading to repercussions in other areas such as cancer treatments. As we can see from the graph this is true,
+     with huge numbers of hospitalisations happening as a result of Covid-19.</p>
   </div>
+  <div class="a">
+    <div class="chart" id="chart15">
+      <script>
+        var myChart15 = "hospitaladmissions.json";
+        vegaEmbed('#chart15', myChart15);
+      </script>
+    </div></div>  
   
       
   
