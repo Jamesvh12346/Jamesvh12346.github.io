@@ -1,6 +1,7 @@
 
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Linear Regression",
   "data": {
     "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/stocksedited.csv"
   },
