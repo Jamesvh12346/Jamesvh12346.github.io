@@ -1,81 +1,61 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  
-    "description": "NOMICS cryptocurrency chart. CORS does not work. Works using the AllOrigins tool, but this then retieved all/more data than expected. As a consequence dta needs to be filtered before charting.",
-
-    "config": {
-      "background":"#ffffff",
-      "view": {
-        "stroke": "transparent"
-      }
-    },
-   
-
+    
     "title": {
-    "text": "Some cryptos by market cap",
-    "anchor": "start",
-    "color": "#000000",
-    "subtitle":"Some currencies by market cap, $ billion. Source: nomics.api",
-    "subtitleFontStyle":"italic",
-    "subtitleFontSize":10,
-    "subtitleColor":"#1793db"
-    
-  },
-
-    "data": {
-      "url": "https://api.allorigins.win/raw?url=https://api.nomics.com/v1/currencies/ticker?key=5029ecdc2cd62a344ef5b92a18816e95f92a6e52&interval=1d,30d,ytd"},
-  
-
- "transform":[
-      {"filter": {
-        "field": "currency", 
-        "oneOf": ["SHIB", "XRP", "DOGE", "ADA", "LUNA", "LINK"]}
-        }
-        ,
-    {"calculate": "datum.market_cap/1000000000", "as": "mktCapb"}
-  ],    
-
-    "mark": {
-      "type": "bar",
-      "color":"#b6042b"},
-  
-    "width":"container",
-    "height":300,
-    
-    "encoding": {
-      
-      "x": {
-        "field": "currency", 
-        "type": "ordinal", 
-        "title": null,
-        "sort":"x",
-        "axis":{
-          "domainColor":"dimgrey",
-          "labelColor":"#b38615",
-          "tickColor":"black",
-          "gridColor":"dimgrey"
-          }
-        },
-      
-      "y": {
-        "field": "mktCapb", 
-        "type": "quantitative",
-        "sort":"ascending", 
-        "title": null,
-          "axis":{
-            "domainColor":"dimgrey",
-            "labelColor":"#03613d",
-            "tickColor":"black",
-            "gridColor":"dimgrey"
-          }
-  
+      "text": "Some cryptos by market cap",
+      "subtitle":"Source: nomics.api",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
     },
-
-    "tooltip": [
-      {"field": "name", "title": "Currency"},
-      {"field": "mktCapb", "title": "Market cap ($ billion)"}
+    
+     "data": {
+      "url": "https://api.allorigins.win/raw?url=https://api.nomics.com/v1/currencies/ticker?key=5029ecdc2cd62a344ef5b92a18816e95f92a6e52&interval=1d,30d,ytd",
+      "format":{}
       
-      
-      ]
+    },
+  
+     "transform":[
+        
+        {"filter": {
+          "field": "currency", 
+          "oneOf": ["SHIB", "XRP", "DOGE", "ADA", "LUNA", "LINK"]}
+          }
+  
+  
+      ],
+    
+    
+    "height": 300,
+    "width": 310,
+     
+    "mark": {"type": "bar", "point": false},
+   
+    "encoding": {
+  
+      "x": {
+        "field": "currency",
+        "type": "nominal",
+        "title": null,
+        "axis": {"grid": false}
+      },
+  
+      "y": {
+        "field": "market_cap",
+        "type": "quantitative",
+        "title": null,
+        "axis": {"grid": false}
+      },
+  
+      "color": {
+        "field": "currency",
+        "type": "nominal",
+        "scale": {"scheme": "set1"},
+        "title": "Currency",
+        "legend": {
+          "orient": "top-left", 
+          "fillColor": "#FcFdFd"}
+      }
   }
-}
+  }
