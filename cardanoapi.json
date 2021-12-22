@@ -1,64 +1,37 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "description": "",
+    "data": {
+       "url": "https://rest.coinapi.io/v1/exchangerate/ADA/USD/history?apikey=E69F415D-4C66-466A-A212-4F3E3A00EC07&period_id=10DAY&time_start=2019-07-01T00:00:00&time_end=2022-02-01T00:00:00&limit=100"
+       },
 
-   "title": {
-    "text": "Cardano Price",
-    "subtitle":"Source: coinapi.io",
-    "subtitleFontStyle":"italic",
-    "subtitleFontSize":10,
-    "anchor": "start",
-    "color": "#000000",
-    "subtitleColor":"#a0db17"},
 
-  "config": {
-    "background":"#ffffff",
-    "view": {
-      "stroke": "transparent"}},
+    "title": {
+        "text": "Price of Cardano",
+        "subtitle": "Daily price of ADA in GBP. Source: CoinAPI",
+        "subtitleFontStyle":"italic",
+        "subtitleFontSize":10,
+        "anchor": "start",
+        "color": "black"},
+
+    "width":435,
+    "height":300,
+
+    "mark":{
+        "type": "line",
+        "color":"orange",
+        "strokeWidth":2,
+        "opacity":1},
  
-  
-  "data": {
-    "url": "https://rest.coinapi.io/v1/exchangerate/ADA/USD/history?apikey=E69F415D-4C66-466A-A212-4F3E3A00EC07&period_id=10DAY&time_start=2019-07-01T00:00:00&time_end=2022-02-01T00:00:00&limit=100",
-    "format": {"type": "json"}},
-  
 
-  "height": 300,
-  "width": "container",
-  
-
-  "mark": {
-    "type": "line",
-    "point": false,
-    "interpolate": "linear",
-    "color":"#f46e45"
-  },
-
-  "encoding": {
-    "x": {
-      "field": "time_period_end",
-      "type": "temporal",
-      "axis": {
-        "title": "Date",
-        "grid": true,
-        "labelSeparation": 10,
-        "domainColor":"dimgrey",
-        "labelColor":"#1f00a7",
-        "tickColor":"black",
-        "gridColor":"dimgrey"
-      }},
-
-    "y": {
-      "field": "rate_open",
-      "type": "quantitative",
-      "title": "",
-      "axis": {
-        "grid": true,
-        "domainColor":"dimgrey",
-        "labelColor":"#1f00a7",
-        "tickColor":"black",
-        "gridColor":"dimgrey",
-        "format":"$"}
-        }
-     }
+    "encoding": {
+      "x": {
+          "field": "time_period_end",
+          "type": "temporal",
+          "title":null},
+      "y": {
+          "field": "rate_open",
+          "type": "quantitative",
+          "title":null}
+    }
 }
