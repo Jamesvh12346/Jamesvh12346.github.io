@@ -29,7 +29,7 @@
  "transform":[
       {"filter": {
         "field": "currency", 
-        "oneOf": ["SHIB", "XRP", "DOGE", "ADA", "BTC", "LINK"]}
+        "oneOf": ["SHIB", "XRP", "DOGE", "ADA", "LUNA", "LINK"]}
         }
         ,
     {"calculate": "datum.market_cap/1000000000", "as": "mktCapb"}
@@ -45,10 +45,10 @@
     "encoding": {
       
       "x": {
-        "field": "mktCapb", 
-        "type": "quantitative", 
+        "field": "currency", 
+        "type": "ordinal", 
         "title": null,
-        "sort":"ascending",
+        "sort":"x",
         "axis":{
           "domainColor":"dimgrey",
           "labelColor":"#b38615",
@@ -58,9 +58,9 @@
         },
       
       "y": {
-        "field": "currency", 
-        "type": "ordinal",
-        "sort":"x", 
+        "field": "mktCapb", 
+        "type": "quantitative",
+        "sort":"ascending", 
         "title": null,
           "axis":{
             "domainColor":"dimgrey",
