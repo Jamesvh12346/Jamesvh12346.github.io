@@ -1,66 +1,55 @@
 
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Linear Regression",
-  "data": {
-    "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/stocksedited.csv"
-  },
-  "width": "container",
+  
+  "data": {"url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/stocksedited.csv"},
+
   "title": {
-    "text": "Linear regression: Wizz Air Stock Price on Ryan Air Stock Price",
+    "text": "Linear Regression: Wizz Air Stock Price on Ryan Air Stock Price",
     "subtitle": "Monthly data, 30/1/16 - 26/11/21",
-    "subtitleFontStyle":"italic",
-    "subtitleFontSize":11,
-    "subtitleColor":"#2417db9c"
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
   },
+
+  "height": 300,
+  "width": 310,
+  
   "layer": [
     {
-      "mark": {
-        "type": "point",
-        "filled": true,
-        "tooltip": true
-      },
+      "mark": {"type": "point", "filled": true},
+      
       "encoding": {
         "x": {
-          "field": "WIZZL",
+          "field": "WIZZL", 
           "type": "quantitative",
-          "axis": {
-            "domain": true
-          }
-        },
+          "title": "Wizz Air stock price"
+          },
+        
         "y": {
-          "field": "RYAAY",
-          "type": "quantitative"
-        }
+          "field": "RYAAY", 
+          "type": "quantitative",
+          "title": "Ryan Air stock price"
+          }
       }
     },
     {
-      "mark": {
-        "type": "line",
-        "color": "firebrick"
-      },
+      "mark": {"type": "line", "color": "firebrick"},
       "transform": [
-        {
-          "regression": "WIZZL",
-          "on": "RYAAY"
-        }
+        {"regression": "WIZZL", "on": "RYAAY"}
       ],
       "encoding": {
-        "x": {
-          "field": "WIZZL",
-          "type": "quantitative"
-        },
+        "x": {"field": "WIZZL", "type": "quantitative"},
         "y": {
-          "field": "RYAAY",
-          "type": "quantitative"
-        }
+          "field": "RYAAY", "type": "quantitative"}
       }
     },
     {
       "transform": [
         {
-          "regression": "WIZZL",
-          "on": "RYAAY",
+          "regression": "RYAAY",
+          "on": "WIZZL",
           "params": true
         },
         {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
@@ -69,12 +58,10 @@
         "type": "text",
         "color": "firebrick",
         "x": "width",
-        "align": "right",
-        "y": -10
+        "align": "center",
+        "y": -5
       },
-      "encoding": {
-        "text": {"type": "nominal", "field": "R2"}
-      }
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
     }
   ]
 }
