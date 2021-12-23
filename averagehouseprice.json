@@ -1,0 +1,73 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  
+  "title": {
+      "text": "House Prices: UK regions",
+      "subtitle":"Index of Private House Prices. Source: ONS",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+  
+    "description": "Private House Prices: UK regions ",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/Average-prices.csv",
+      "format": {"type": "csv"}
+    },
+  
+    "height": 300,
+    
+    "width": 430,
+    
+    "mark": {"type": "line"},
+    
+    "selection": {
+      "Region": {
+        "type": "single",
+        "fields": ["Region_Name"],
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Kensington and Chelsea",
+            "Hammersmith and Fulham",
+            "Sheffield",
+            "Wigan",
+            "Cheltenham",
+            "Dover",
+            "Winchester",
+            "Blackpool"
+          ],
+          "name": "Pick a region: "
+        }
+      }
+    },
+    "transform": [
+      
+      {"filter": {"selection": "Region"}}
+      
+    ],
+  
+    "encoding": {
+      "x": {
+        "field": "Date", 
+        "type": "temporal", 
+        "title": null},
+      "y": {
+        "field": "Average_Price",
+        "type": "quantitative",
+        "title": null
+        
+        
+        },
+      
+        
+      "color": {
+        "field": "Region_Name",
+        "type": "nominal",
+        "legend": null,
+        "scale": {"scheme": "inferno"}
+      }
+    }
+  }
