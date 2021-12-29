@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Hospital Admissions",
   "data": {
-    "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/hospitaladmissionsedited.csv"
+    "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/portfolio%20data/hospitaladmissionsedited.csv"
   },
   
    "title": {
