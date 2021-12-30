@@ -1,0 +1,73 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    
+    "title": {
+      "text": "Voting Intention",
+      "subtitle":"Source: Ipsos Mori",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+    
+     "data": {
+      "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/project%20data/Votingintention.csv",
+      "format": {"type": "csv"}
+    },
+  
+  
+    
+    "height":400,
+    "width":400,
+    "padding":25,
+
+     
+    "mark": {"type": "line", "point": true},
+
+    "selection": {
+    "Region": {
+      "type": "single",
+      "fields": ["Choice"],
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Conservative",
+          "Labour",
+          "Liberal Democrats",
+          "SNP/ Plaid Cympru",
+          "Green"
+        ],
+        "name": "Pick a party: "
+      }
+    }
+  },
+  
+   
+    "encoding": {
+  
+      "x": {
+        "field": "Year",
+        "type": "temporal",
+        "title": "Date"
+      },
+  
+      "y": {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "%",
+        "axis": {"grid": true}
+            },
+  
+      "color": {
+        "field": "Choice",
+        "type": "nominal",
+        "scale": {"scheme": "tableau20"},
+        "title": "Party"
+      },
+          "tooltip": {"field": "Choice", "type": "nominal"},
+  
+          "href": {"field": "url", "type": "nominal"}
+  
+  }
+  }
