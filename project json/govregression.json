@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/project%20data/projectregression.csv"
+  },
+  "width": "container",
+  "height": 300,
+  "autosize":"fit",
+  "title": {
+    "text": "Covid Cases against Government Approval Rating",
+    "fontSize": 20,
+    "color": "cornflowerblue",
+    "subtitle": "Regression 06/04/2020 - 20/12/2021",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":12,
+    "subtitleColor":"#170da49c",
+    "anchor": "start"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Cases",
+          "type": "quantitative",
+          "title": "Covid Cases",
+          "axis": {
+            "domain": true,
+            "format": ".8"
+          }
+        },
+        "y": {
+          "field": "Approval",
+          "type": "quantitative",
+          "title": "Approval Rating",
+          "axis": {
+            "domain": true,
+            "format": "0.2"
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "burlywood",
+        "opacity": 1,
+        "thickness": 1,
+        "tooltip": true
+      },
+      "transform": [
+        {
+          "regression": "Cases",
+          "on": "Approval"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Cases",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Approval",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "Cases",
+          "on": "Approval",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "firebrick",
+        "x": "width",
+        "align": "right",
+        "y": -10
+      },
+      "encoding": {
+        "text": {"type": "nominal", "field": "R2"}
+      }
+    }
+  ]
+}
