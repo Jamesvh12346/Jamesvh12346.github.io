@@ -1,72 +1,46 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {
-    "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/project%20data/projectregression.csv"
-  },
-  "width": "container",
-  "height": 300,
-  "autosize":"fit",
+  
+  "data": {"url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/project%20data/projectregression.csv"},
+
   "title": {
-    "text": "Covid Cases against Government Approval Rating",
-    "fontSize": 20,
-    "color": "cornflowerblue",
-    "subtitle": "Regression 06/04/2020 - 20/12/2021",
-    "subtitleFontStyle":"italic",
-    "subtitleFontSize":12,
-    "subtitleColor":"#170da49c",
-    "anchor": "start"
+    "text": "Covid Cases against Government Approval",
+    "subtitle": "06/04/2020 - 20/12/2021 Source: YouGov and ONS ",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
   },
+
+  "height": 300,
+  "width": 310,
+  
   "layer": [
     {
-      "mark": {
-        "type": "circle",
-        "filled": true,
-        "tooltip": true
-      },
+      "mark": {"type": "point", "filled": true},
+      
       "encoding": {
         "x": {
-          "field": "Cases",
+          "field": "Cases", 
           "type": "quantitative",
-          "title": "Covid Cases",
-          "axis": {
-            "domain": true,
-            "format": ".8"
-          }
-        },
+          "title": "Covid Cases"
+          },
+        
         "y": {
-          "field": "Approval",
-          "type": "quantitative",
-          "title": "Approval Rating",
-          "axis": {
-            "domain": true,
-            "format": "0.2"
+          "field": "Approval", 
+          "type": "quantitative"
           }
-        }
       }
     },
     {
-      "mark": {
-        "type": "line",
-        "color": "burlywood",
-        "opacity": 1,
-        "thickness": 1,
-        "tooltip": true
-      },
+      "mark": {"type": "line", "color": "firebrick"},
       "transform": [
-        {
-          "regression": "Cases",
-          "on": "Approval"
-        }
+        {"regression": "Cases", "on": "Approval"}
       ],
       "encoding": {
-        "x": {
-          "field": "Cases",
-          "type": "quantitative"
-        },
+        "x": {"field": "Cases", "type": "quantitative"},
         "y": {
-          "field": "Approval",
-          "type": "quantitative"
-        }
+          "field": "Approval", "type": "quantitative"}
       }
     },
     {
@@ -82,12 +56,10 @@
         "type": "text",
         "color": "firebrick",
         "x": "width",
-        "align": "right",
-        "y": -10
+        "align": "center",
+        "y": -5
       },
-      "encoding": {
-        "text": {"type": "nominal", "field": "R2"}
-      }
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
     }
   ]
 }
