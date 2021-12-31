@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/project%20data/Vaccinations.csv"},
+
+    "config":{"background": "#ffffff"}, 
+    "height": 300,
+    "width": 300,
+
+       "title": {
+      "text": "Comparing Vaccinations to Approval Rating, Deaths and Covid Cases",
+      "subtitle":"Source: ONS and YouGov",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black",
+      "fontSize":15,
+      "font": "Italic"
+    },
+
+
+  "params": [{
+    "name": "grid",
+    "select": "interval",
+    "bind": "scales"
+  }],
+  "mark": {"type":"circle"},
+
+  "encoding": {
+    "x": {
+      "field": "Vaccinations", "type": "quantitative",
+      "scale": {"domain": [10000, 1000000]},
+      "axis": {
+          "title": "Vaccinations",
+          "titleFont": "Italic",
+          "titleFontSize": 12,
+          "titleFontWeight": 500,
+          "grid": true, "gridColor": "darkgrey"}
+    },
+    "y": {
+      "field": "Approval", "type": "quantitative",
+      "scale": {"domain": [0, 60]},
+      "axis": {
+          "title": ["Approval Rating"],
+          "titleFont": "Italic",
+          "titleFontSize": 12,
+          "titleFontWeight": 500,
+          "titleAngle": 270,
+          "grid": true, "gridColor": "darkgrey"}
+    },
+    "color": {"field": "Cases", "type": "quantitative", "scale": {"scheme":     "inferno"},
+    "legend": {"title": ["Cases"], "titleFont": "Italic","titleFontSize": 11,"titleFontWeight": 500}
+    },
+
+    "size": {"field": "Deaths", "type": "quantitative", "legend": null, "scale": {"rangeMin": 200,"rangeMax": 1000}},
+
+    "tooltip": [
+      {"field": "Date"},{"field": "Approval"},{"field": "Cases"},{"field": "Deaths"},{"field": "Vaccinations"}
+    ]
+  }
+}
