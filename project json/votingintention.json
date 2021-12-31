@@ -1,73 +1,85 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    
-    "title": {
-      "text": "Voting Intention",
-      "subtitle":"Source: Ipsos Mori",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/project%20data/Votingintention.csv"},
+  
+  
+  "height": 300,
+  "width": 300,
+
+      "title": {
+      "text": "Voting Intention %",
+      "subtitle":"01/02/2019 - 01/12/2021. Source: Ipsos Mori",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
       "anchor": "start",
-      "color": "black"
+      "color": "black",
+      "fontSize":15,
+      "font": "Italic"
     },
-    
-     "data": {
-      "url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/project%20data/Votingintention.csv",
-      "format": {"type": "csv"}
+
+
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal", "title": "", "axis":{"grid": true, "gridColor": "darkgrey"}},
+    "y": {"field": "Value", "type": "quantitative", "title": "", "axis":{"grid": true, "gridColor": "darkgrey"},
+    "scale":{"domain":[0,60]}},
+    "color": {
+      "condition": {
+        "param": "hover",
+        "field":"Choice",
+        "type":"nominal",
+        "legend": {
+          "orient": "right", 
+          "fillColor": "#f7f7f7",
+          "strokeColor": "black",
+          "padding": 4
+          },
+        "scale":{"scheme":"inferno"}
+      },
+      "value": "grey"
     },
-  
-  
-    
-    "height":400,
-    "width":400,
-    "padding":25,
-
-     
-    "mark": {"type": "line", "point": true},
-
-    "selection": {
-    "Region": {
-      "type": "single",
-      "fields": ["Choice"],
-      "bind": {
-        "input": "select",
-        "options": [
-          null,
-          "Conservative",
-          "Labour",
-          "Liberal Democrats",
-          "SNP/ Plaid Cympru",
-          "Green"
-        ],
-        "name": "Pick a party: "
-      }
-    }
+    "opacity": {
+      "condition": {
+        "param": "hover",
+        "value": 1
+      },
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "Choice"},{"field": "Value", "title":"Voting Intention %"}, {"field": "Year", "type": "temporal"}
+    ]
   },
+
+
   
-   
+
+  "layer": [{
+    "description": "transparent layer to make it easier to trigger selection",
+    "params": [{
+      "name": "hover",
+      "value": [{"Choice": "Conservative"}],
+      "select": {
+        "type": "point",
+        "fields": ["Choice"],
+        "on": "mouseover"
+      }
+    }],
+    "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
+  }, 
+  {
+    "mark": "line"
+  }, {
     "encoding": {
-  
-      "x": {
-        "field": "Year",
-        "type": "temporal",
-        "title": "Date"
-      },
-  
-      "y": {
-        "field": "Value",
-        "type": "quantitative",
-        "title": "%",
-        "axis": {"grid": true}
-            },
-  
-      "color": {
-        "field": "Choice",
-        "type": "nominal",
-        "scale": {"scheme": "tableau20"},
-        "title": "Party"
-      },
-          "tooltip": {"field": "Choice", "type": "nominal"},
-  
-          "href": {"field": "url", "type": "nominal"}
-  
-  }
-  }
+      "x": {"aggregate": "max", "field": "date"},
+      "y": {"aggregate": {"argmax": "date"}, "field": "price"}
+    },
+    "layer": [{
+      "mark": {"type": "circle"}
+    }, {
+      "mark": {"type": "text", "align": "left", "dx": 4},
+      "encoding": {"text": {"field":"symbol", "type": "nominal"}}
+    }]
+  }],
+
+
+  "config": {"view": {"stroke": null}, "background": "#ffffff"}
+}
