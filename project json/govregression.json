@@ -23,7 +23,8 @@
         "x": {
           "field": "Cases", 
           "type": "quantitative",
-          "title": "Covid Cases"
+          "title": "Covid Cases",
+          "scale": {"domain": [-20000,130000]}
           },
         
         "y": {
@@ -32,6 +33,7 @@
           }
       }
     },
+
     {
       "mark": {"type": "line", "color": "firebrick"},
       "transform": [
@@ -62,4 +64,6 @@
       "encoding": {"text": {"type": "nominal", "field": "R2"}}
     }
   ]
+    
+
 }
