@@ -37,13 +37,6 @@ div.a {
     text-align: justify;
   } 
 
-.container {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
 
 .chart{
     background-color: white;
