@@ -9,15 +9,15 @@ body{
 h1{
 
     color: rgb(0, 0, 0);
-    font-family: system-ui;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h3{
     color: rgb(93, 138, 168);
-    font-family: system-ui;
+    font-family: 'Montserrat', sans-serif;
 }
 
-p{font-family: system-ui;
+p{font-family: 'Montserrat', sans-serif;
 color: black;
 }
 
