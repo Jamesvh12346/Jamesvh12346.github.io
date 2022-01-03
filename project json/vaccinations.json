@@ -38,7 +38,7 @@
     },
     "y": {
       "field": "Approval", "type": "quantitative",
-      "scale": {"domain": [0, 60]},
+      "scale": {"domain": [0, 40]},
       "axis": {
           "title": ["Approval Rating"],
           "titleFont": "Italic",
