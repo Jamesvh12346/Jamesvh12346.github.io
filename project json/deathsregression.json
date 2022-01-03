@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+  "data": {"url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/project%20data/Vaccinations.csv"},
+
+  "title": {
+    "text": "Deaths against Government Approval",
+    "subtitle": "01/01/2021 - 20/12/2021 Source: YouGov and ONS ",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+  "height": 300,
+  "width": 310,
+  
+  "layer": [
+    {
+      "mark": {"type": "point", "filled": true},
+      
+      "encoding": {
+        "x": {
+          "field": "Deaths", 
+          "type": "quantitative",
+          "title": "Daily Deaths",
+          "scale": {"domain": [0,1200]}
+          },
+        
+        "y": {
+          "field": "Approval", 
+          "type": "quantitative"
+          }
+      }
+    },
+
+    {
+      "mark": {"type": "line", "color": "firebrick"},
+      "transform": [
+        {"regression": "Deaths", "on": "Approval"}
+      ],
+      "encoding": {
+        "x": {"field": "Deaths", "type": "quantitative"},
+        "y": {
+          "field": "Approval", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "Deaths",
+          "on": "Approval",
+          "params": true
+        },
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "firebrick",
+        "x": "width",
+        "align": "center",
+        "y": -5
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ]
+    
+
+}
