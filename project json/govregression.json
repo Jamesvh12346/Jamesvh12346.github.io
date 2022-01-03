@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   
-  "data": {"url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/project%20data/projectregression.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/Jamesvh12346/Jamesvh12346.github.io/main/project%20data/Vaccinations.csv"},
 
   "title": {
     "text": "Covid Cases against Government Approval",
@@ -24,7 +24,7 @@
           "field": "Cases", 
           "type": "quantitative",
           "title": "Covid Cases",
-          "scale": {"domain": [-20000,130000]}
+          "scale": {"domain": [0,150000]}
           },
         
         "y": {
