@@ -36,7 +36,7 @@
     <div class="d">
       <p>Project Aims: Covid-19 is the greatest problem any government has had to face since the 2nd World War. The task of dealing with this unprecedented national emergency
           has fallen to Boris Johnson and his Conservative government who would suggest they have handled the pandemic well, without their power being undermined. 
-          This project aims to test this and answer: How effected has Boris Johnson's grip on power been effected by the pandemic and which area of the pandemic has effected it 
+          This project aims to test this and answer: How has Boris Johnson's grip on power been effected by the pandemic and which area of the pandemic has effected it 
           the most? The following graphs will try to illustrate this.</p>
   <div>  
   <div class="chart" id="chart19">
@@ -142,7 +142,9 @@
      <p>Challenges in data cleaning and/or analysis, and the tools you used to overcome them: For the Covid data, I used data from the ONS via .csv files, as well 
          as a live API from ONS for the graph on deaths which provides automation. This decision was made as I found the data given from ONS was not just reliable,
          but more practical for data manipulation for my visualisations.For the data on Government approval and Boris Johnson I used various pdf surveys
-     from polling firms such as YouGov and Ipsos Mori. The greatest challenge in data cleaning was scraping the pdf surveys for their data. Often, they were not 
+     from polling firms such as YouGov and Ipsos Mori.
+    <br> <br> 
+         The greatest challenge in data cleaning was scraping the pdf surveys for their data. Often, they were not 
      in table form meaning I had to use complicated pandas and python programming to get the data. Time then had to be spent manually aligning the data in excel
      before a data join was performed with the ONS data. There were fewer problems with the ONS data, but they still required a lot of the time to be cleaned in 
      excel. Often, I had problems with the version of Vega Embed installed in my html file limiting the code I could use, but this was resolved by reading 
